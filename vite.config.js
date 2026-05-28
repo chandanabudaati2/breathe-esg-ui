@@ -5,6 +5,11 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
+    allowedHosts: [
+      'breathe-esg-emissions.up.railway.app',
+      'breathe-esg-ui-production.up.railway.app',
+      'breathe-esg-emissions.in'
+    ],
     proxy: {
       '/api': {
         target: 'http://127.0.0.1:8000',
@@ -15,6 +20,7 @@ export default defineConfig({
   preview: {
     allowedHosts: [
       'breathe-esg-emissions.up.railway.app',
+      'breathe-esg-ui-production.up.railway.app',
       'breathe-esg-emissions.in'
     ]
   }
