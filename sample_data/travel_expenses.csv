@@ -1,0 +1,31 @@
+Report Name,Employee Name,Employee ID,Transaction Date,Expense Type,Vendor,City,Business Purpose,Amount,Currency,Payment Type,Approval Status,Cost Center,Description
+Q1 Sales Summit,Anna Schmidt,EMP0042,10.01.2025,Airfare,Lufthansa,Frankfurt,Attending Q1 Sales Meeting,450.00,EUR,Corporate Card,Approved,CC-SALES,Flight from STR to FRA
+Q1 Sales Summit,Anna Schmidt,EMP0042,10.01.2025,Hotel,Marriott Frankfurt,Frankfurt,Attending Q1 Sales Meeting,180.00,EUR,Corporate Card,Approved,CC-SALES,2 nights hotel stay
+Q1 Sales Summit,Anna Schmidt,EMP0042,12.01.2025,Taxi,Frankfurt Cab,Frankfurt,Travel to Frankfurt Office,25.00,EUR,Corporate Card,Approved,CC-SALES,Taxi ride office to station
+US Partner Visit,Markus Wagner,EMP0015,15.02.2025,Airfare,United Airlines,Boston,US Partner Kickoff,1250.00,EUR,Corporate Card,Approved,CC-EXEC,Flight from FRA to BOS
+US Partner Visit,Markus Wagner,EMP0015,15.02.2025,Hotel,Westin Copley Boston,Boston,US Partner Kickoff,850.00,USD,Corporate Card,Approved,CC-EXEC,4 nights hotel stay
+US Partner Visit,Markus Wagner,EMP0015,19.02.2025,Airfare,Delta Airlines,New York,US Partner Kickoff,220.00,USD,Corporate Card,Approved,CC-EXEC,Flight from BOS to JFK
+US Partner Visit,Markus Wagner,EMP0015,19.02.2025,Hotel,Sheraton NY,New York,US Partner Kickoff,600.00,USD,Corporate Card,Approved,CC-EXEC,2 nights hotel stay
+US Partner Visit,Markus Wagner,EMP0015,21.02.2025,Airfare,United Airlines,Frankfurt,US Partner Kickoff,1100.00,EUR,Corporate Card,Approved,CC-EXEC,Flight from JFK to FRA
+US Partner Visit,Markus Wagner,EMP0015,16.02.2025,Car Rental,Hertz,Boston,US Partner Kickoff,180.00,USD,Corporate Card,Approved,CC-EXEC,Rental car for local travel
+Q1 Tech Conf,Sarah Connor,EMP0088,05.03.2025,Airfare,British Airways,London,Speaker at Tech Summit,380.00,GBP,Corporate Card,Approved,CC-RD,Flight from FRA to LHR
+Q1 Tech Conf,Sarah Connor,EMP0088,05.03.2025,Hotel,Hilton London,London,Speaker at Tech Summit,450.00,GBP,Corporate Card,Approved,CC-RD,3 nights hotel stay
+Q1 Tech Conf,Sarah Connor,EMP0088,08.03.2025,Airfare,British Airways,Frankfurt,Speaker at Tech Summit,390.00,GBP,Corporate Card,Approved,CC-RD,Flight from LHR to FRA
+Internal Audit MUC,Dieter Berg,EMP0102,12.03.2025,Airfare,Deutsche Bahn,Munich,Quarterly Audit,85.00,EUR,Cash,Approved,CC-AUDIT,Flight from STR to MUC
+Internal Audit MUC,Dieter Berg,EMP0102,12.03.2025,Hotel,Motel One Muenchen,Munich,Quarterly Audit,95.00,EUR,Cash,Approved,CC-AUDIT,1 night stay
+Internal Audit MUC,Dieter Berg,EMP0102,13.03.2025,Taxi,Munich Cab,Munich,Quarterly Audit,18.00,EUR,Cash,Approved,CC-AUDIT,Taxi hotel to plant
+Supplier Meet PVG,Markus Wagner,EMP0015,20.03.2025,Airfare,Air China,Shanghai,Supplier Assessment,2400.00,EUR,Corporate Card,Approved,CC-EXEC,Flight from FRA to PVG
+Supplier Meet PVG,Markus Wagner,EMP0015,20.03.2025,Hotel,Grand Hyatt PVG,Shanghai,Supplier Assessment,980.00,USD,Corporate Card,Approved,CC-EXEC,5 nights hotel stay
+Supplier Meet PVG,Markus Wagner,EMP0015,25.03.2025,Airfare,Air China,Frankfurt,Supplier Assessment,2200.00,EUR,Corporate Card,Approved,CC-EXEC,Flight from PVG to FRA
+Supplier Meet PVG,Markus Wagner,EMP0015,21.03.2025,Taxi,Shanghai Taxi,Shanghai,Supplier Assessment,150.00,CNY,Corporate Card,Approved,CC-EXEC,Taxi airport to hotel
+Asia Sales Kickoff,Anna Schmidt,EMP0042,05.04.2025,Airfare,Singapore Air,Singapore,Asia Strategy Summit,1850.00,EUR,Corporate Card,Approved,CC-SALES,Flight from FRA to SIN
+Asia Sales Kickoff,Anna Schmidt,EMP0042,05.04.2025,Hotel,Marina Bay Sands,Singapore,Asia Strategy Summit,1500.00,SGD,Corporate Card,Approved,CC-SALES,3 nights hotel stay
+Asia Sales Kickoff,Anna Schmidt,EMP0042,08.04.2025,Airfare,Singapore Air,Frankfurt,Asia Strategy Summit,1900.00,EUR,Corporate Card,Approved,CC-SALES,Flight from SIN to FRA
+Field Operations,Tobias Beck,EMP0074,12.04.2025,Airfare,Private Flight,Berlin,Critical Repair,5200.00,EUR,Corporate Card,Approved,CC-OPS,Flight from STR to BER
+Field Operations,Tobias Beck,EMP0074,13.04.2025,Airfare,Lufthansa,Stuttgart,Critical Repair,290.00,EUR,Corporate Card,Approved,CC-OPS,Flight from TXL to STR
+Field Operations,Tobias Beck,EMP0074,12.04.2025,Taxi,Berlin Express,Berlin,Critical Repair,45.00,EUR,Corporate Card,Approved,CC-OPS,Taxi to repair site
+Field Operations,Tobias Beck,EMP0074,12.04.2025,Hotel,Radisson Berlin,Berlin,Critical Repair,130.00,EUR,Corporate Card,Approved,CC-OPS,1 night hotel
+Internal Audit MUC,Dieter Berg,EMP0102,12.03.2025,Airfare,Deutsche Bahn,Munich,Quarterly Audit,85.00,EUR,Cash,Approved,CC-AUDIT,Flight from STR to MUC
+Supplier Meet PVG,Markus Wagner,EMP0015,20.03.2025,Airfare,Air China,Shanghai,Supplier Assessment,2400.00,EUR,Corporate Card,Approved,CC-EXEC,Flight from FRA to PVG
+Missing Codes Trip,John Doe,EMP0999,18.04.2025,Airfare,Delta Airlines,New York,Vague flight description,800.00,USD,Corporate Card,Approved,CC-SALES,Flight to New York
+Vague Hotel Stay,John Doe,EMP0999,18.04.2025,Hotel,Cozy Inn,,Vague hotel description,150.00,USD,Corporate Card,Approved,CC-SALES,Hotel stay
