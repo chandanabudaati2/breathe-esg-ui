@@ -14,7 +14,7 @@ export default defineConfig({
   },
   preview: {
     allowedHosts: [
-      'breathe-esg-ui-production.up.railway.app',
+      'breathe-esg-emissions.up.railway.app',
       'breathe-esg-emissions.in'
     ]
   }
