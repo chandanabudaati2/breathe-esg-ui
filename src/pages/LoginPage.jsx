@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Database, Lock, Mail, KeyRound, AlertCircle, RefreshCw } from 'lucide-react';
-import client from '../api/client';
+import client, { setAuthToken } from '../api/client';
 
 const LoginPage = ({ onLoginSuccess }) => {
   const [email, setEmail] = useState('');
@@ -8,35 +8,21 @@ const LoginPage = ({ onLoginSuccess }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  // Fetch CSRF cookie from DRF before performing logins
-  const ensureCsrf = async () => {
-    try {
-      await client.get('/auth/csrf/');
-    } catch (err) {
-      console.error('Failed to pre-fetch CSRF token:', err);
-    }
-  };
-
-  useEffect(() => {
-    ensureCsrf();
-  }, []);
-
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError('');
 
-    // Django standard login takes 'username' (which we map to email for corporate systems) and 'password'
     try {
-      await client.post('/auth/login/', {
+      const loginRes = await client.post('/auth/login/', {
         username: email,
         password: password,
       });
 
-      // Verify status
-      const statusRes = await client.get('/auth/status/');
-      if (statusRes.data.authenticated) {
-        onLoginSuccess(statusRes.data);
+      if (loginRes.data.authenticated && loginRes.data.token) {
+        // Store the token for all future API requests
+        setAuthToken(loginRes.data.token);
+        onLoginSuccess(loginRes.data);
       } else {
         setError('Verification failed. Invalid credentials.');
       }

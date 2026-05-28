@@ -5,34 +5,34 @@ const API_BASE_URL = import.meta.env.PROD ? 'https://breathe-esg-server-producti
 
 const client = axios.create({
   baseURL: API_BASE_URL,
-  withCredentials: true, // Enables session CSRF cookie management
   headers: {
     'Content-Type': 'application/json',
   }
 });
 
-// Automatically extract and append Django CSRF token to requests
+// Automatically attach stored auth token to every request
 client.interceptors.request.use((config) => {
-  const name = 'csrftoken';
-  let cookieValue = null;
-  if (document.cookie && document.cookie !== '') {
-    const cookies = document.cookie.split(';');
-    for (let i = 0; i < cookies.length; i++) {
-      const cookie = cookies[i].trim();
-      if (cookie.substring(0, name.length + 1) === (name + '=')) {
-        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-        break;
-      }
-    }
-  }
-
-  if (cookieValue) {
-    config.headers['X-CSRFToken'] = cookieValue;
+  const token = localStorage.getItem('authToken');
+  if (token) {
+    config.headers['Authorization'] = `Token ${token}`;
   }
   return config;
 }, (error) => {
   return Promise.reject(error);
 });
+
+// Helper functions for token management
+export const setAuthToken = (token) => {
+  localStorage.setItem('authToken', token);
+};
+
+export const clearAuthToken = () => {
+  localStorage.removeItem('authToken');
+};
+
+export const getAuthToken = () => {
+  return localStorage.getItem('authToken');
+};
 
 export default client;
 export { API_BASE_URL };

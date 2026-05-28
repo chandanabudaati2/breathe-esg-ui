@@ -3,7 +3,7 @@ import LoginPage from './pages/LoginPage';
 import Dashboard from './components/Dashboard';
 import ReviewPage from './pages/ReviewPage';
 import IngestionPage from './pages/IngestionPage';
-import client from './api/client';
+import client, { getAuthToken, clearAuthToken } from './api/client';
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -11,15 +11,23 @@ const App = () => {
   const [activePage, setActivePage] = useState('review'); // 'review' or 'upload'
 
   const checkAuthStatus = async () => {
+    const token = getAuthToken();
+    if (!token) {
+      setUser(null);
+      setCheckingAuth(false);
+      return;
+    }
     try {
       const response = await client.get('/auth/status/');
       if (response.data.authenticated) {
         setUser(response.data);
       } else {
+        clearAuthToken();
         setUser(null);
       }
     } catch (err) {
-      console.error('Session check failed:', err);
+      console.error('Auth check failed:', err);
+      clearAuthToken();
       setUser(null);
     } finally {
       setCheckingAuth(false);
@@ -29,9 +37,11 @@ const App = () => {
   const handleLogout = async () => {
     try {
       await client.post('/auth/logout/');
-      setUser(null);
     } catch (err) {
       console.error(err);
+    } finally {
+      clearAuthToken();
+      setUser(null);
     }
   };
 
