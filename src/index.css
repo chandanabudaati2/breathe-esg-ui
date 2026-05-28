@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: #f3f4f6;
+  background-color: #0b0f19;
+
+  /* Custom Color Tokens */
+  --bg-gradient: radial-gradient(circle at top left, #111827 0%, #030712 100%);
+  
+  --panel-bg: rgba(17, 24, 39, 0.45);
+  --panel-border: rgba(255, 255, 255, 0.08);
+  --panel-glow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  
+  --primary: #10b981; /* Emerald Green */
+  --primary-glow: rgba(16, 185, 129, 0.15);
+  --primary-hover: #059669;
+  
+  --accent: #3b82f6; /* Blue */
+  --accent-glow: rgba(59, 130, 246, 0.15);
+  
+  /* Semantic Status Colors */
+  --status-pending-bg: rgba(59, 130, 246, 0.15);
+  --status-pending-text: #60a5fa;
+  --status-pending-border: rgba(59, 130, 246, 0.3);
+  
+  --status-approved-bg: rgba(16, 185, 129, 0.15);
+  --status-approved-text: #34d399;
+  --status-approved-border: rgba(16, 185, 129, 0.3);
+  
+  --status-flagged-bg: rgba(245, 158, 11, 0.15);
+  --status-flagged-text: #fbbf24;
+  --status-flagged-border: rgba(245, 158, 11, 0.3);
+  
+  --status-rejected-bg: rgba(239, 68, 68, 0.15);
+  --status-rejected-text: #f87171;
+  --status-rejected-border: rgba(239, 68, 68, 0.3);
+  
+  --status-locked-bg: rgba(139, 92, 246, 0.15);
+  --status-locked-text: #a78bfa;
+  --status-locked-border: rgba(139, 92, 246, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: var(--panel-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--panel-border);
+  border-radius: 16px;
+  box-shadow: var(--panel-glow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Interactive elements */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, #059669 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px 0 var(--primary-glow);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px 0 rgba(16, 185, 129, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--panel-border);
+  color: #e5e7eb;
+  font-weight: 500;
+  border-radius: 12px;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Inputs & Form controls */
+.form-input, .form-select {
+  background: rgba(17, 24, 39, 0.6);
+  border: 1px solid var(--panel-border);
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus, .form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+/* Tabular configurations */
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.dashboard-table th {
+  padding: 14px 16px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #9ca3af;
+  border-bottom: 1px solid var(--panel-border);
+  font-weight: 600;
+}
+
+.dashboard-table td {
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  color: #e5e7eb;
+}
+
+.dashboard-table tr:last-child td {
+  border-bottom: none;
+}
+
+.dashboard-table tr {
+  transition: all 0.2s ease;
+}
+
+.dashboard-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
